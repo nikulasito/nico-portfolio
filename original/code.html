@@ -1,0 +1,678 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Nico | Full Stack Developer Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;family=Geist:wght@600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@100..900&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-high": "#2a2a2c",
+                    "primary-fixed-dim": "#c0c1ff",
+                    "surface-container-low": "#1c1b1d",
+                    "surface": "#131315",
+                    "inverse-primary": "#494bd6",
+                    "on-tertiary-fixed": "#191c1d",
+                    "surface-container-highest": "#353437",
+                    "tertiary-fixed-dim": "#c5c7c8",
+                    "primary": "#c0c1ff",
+                    "inverse-surface": "#e5e1e4",
+                    "background": "#131315",
+                    "on-secondary-fixed-variant": "#005236",
+                    "on-tertiary-container": "#272a2b",
+                    "on-background": "#e5e1e4",
+                    "on-primary-fixed": "#07006c",
+                    "inverse-on-surface": "#313032",
+                    "surface-dim": "#131315",
+                    "on-secondary-fixed": "#002113",
+                    "secondary-fixed-dim": "#4edea3",
+                    "on-surface-variant": "#c7c4d7",
+                    "surface-container-lowest": "#0e0e10",
+                    "outline-variant": "#464554",
+                    "tertiary-container": "#8f9192",
+                    "outline": "#908fa0",
+                    "on-surface": "#e5e1e4",
+                    "error": "#ffb4ab",
+                    "surface-container": "#201f22",
+                    "surface-tint": "#c0c1ff",
+                    "on-error-container": "#ffdad6",
+                    "surface-variant": "#353437",
+                    "primary-container": "#8083ff",
+                    "on-tertiary-fixed-variant": "#454748",
+                    "secondary-container": "#00a572",
+                    "on-primary": "#1000a9",
+                    "on-primary-fixed-variant": "#2f2ebe",
+                    "on-primary-container": "#0d0096",
+                    "primary-fixed": "#e1e0ff",
+                    "tertiary": "#c5c7c8",
+                    "surface-bright": "#39393b",
+                    "error-container": "#93000a",
+                    "on-secondary": "#003824",
+                    "on-secondary-container": "#00311f",
+                    "secondary": "#4edea3",
+                    "secondary-fixed": "#6ffbbe",
+                    "on-tertiary": "#2e3132",
+                    "on-error": "#690005",
+                    "tertiary-fixed": "#e1e3e4"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "container-max": "1200px",
+                    "margin-mobile": "20px",
+                    "base": "8px",
+                    "stack-md": "24px",
+                    "stack-lg": "48px",
+                    "section-gap": "120px",
+                    "stack-sm": "12px"
+            },
+            "fontFamily": {
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "display-lg-mobile": ["Geist"],
+                    "headline-sm": ["Geist"],
+                    "label-mono": ["JetBrains Mono"],
+                    "caption": ["Inter"],
+                    "headline-md": ["Geist"],
+                    "display-lg": ["Geist"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "display-lg-mobile": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-sm": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "label-mono": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                    "caption": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "headline-md": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.04em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(17, 24, 39, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glow-hover:hover {
+            box-shadow: 0 0 20px rgba(192, 193, 255, 0.15);
+            border-color: rgba(192, 193, 255, 0.3);
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #131315;
+            color: #e5e1e4;
+            overflow-x: hidden;
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md">
+<!-- Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-background/80 dark:bg-background/80 backdrop-blur-md border-b border-outline-variant/10">
+<div class="max-w-container-max mx-auto px-gutter flex justify-between items-center h-16">
+<div class="font-headline-sm text-headline-sm font-bold text-on-background tracking-tighter">Nico</div>
+<div class="hidden md:flex items-center gap-stack-md">
+<a class="text-primary font-semibold font-body-md text-body-md transition-all duration-300" href="#home">Home</a>
+<a class="text-on-surface-variant hover:text-on-surface font-body-md text-body-md transition-all duration-300" href="#projects">Projects</a>
+<a class="text-on-surface-variant hover:text-on-surface font-body-md text-body-md transition-all duration-300" href="#about">About</a>
+<a class="text-on-surface-variant hover:text-on-surface font-body-md text-body-md transition-all duration-300" href="#uses">Uses</a>
+<a class="text-on-surface-variant hover:text-on-surface font-body-md text-body-md transition-all duration-300" href="#contact">Contact</a>
+</div>
+<div class="flex items-center gap-stack-sm"><a href="#" class="hidden md:flex items-center gap-2 border border-outline-variant/20 bg-surface-container-high/50 hover:bg-surface-container-high px-4 py-1.5 rounded-lg text-body-md font-semibold text-on-surface transition-all duration-300 mr-2"><span class="material-symbols-outlined text-[20px]">description</span>Resume</a>
+<button class="material-symbols-outlined p-2 hover:bg-surface-variant/10 rounded-lg transition-all">dark_mode</button>
+<button class="material-symbols-outlined p-2 hover:bg-surface-variant/10 rounded-lg transition-all">terminal</button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative h-screen flex items-center justify-center overflow-hidden" id="home">
+<!-- STITCH_SHADER_START:ANIMATION_2 class="absolute inset-0 w-full h-full opacity-40" -->
+<div class="absolute inset-0 w-full h-full opacity-40" style="display:block;">
+<canvas id="shader-canvas-ANIMATION_2" style="display:block;width:100%;height:100%" width="1280" height="1024"></canvas>
+<script>
+(function() {
+  const canvas = document.getElementById('shader-canvas-ANIMATION_2');
+
+  // Sync the WebGL drawing-buffer size with the CSS-driven layout size.
+  // This fires on initial layout and whenever the element is resized.
+  function syncSize() {
+    const w = canvas.clientWidth  || 1280;
+    const h = canvas.clientHeight || 720;
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width  = w;
+      canvas.height = h;
+    }
+  }
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(syncSize).observe(canvas);
+  }
+  syncSize();
+
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+  if (!gl) return;
+  const vs = `attribute vec2 a_position;
+varying vec2 v_texCoord;
+void main() {
+  v_texCoord = a_position * 0.5 + 0.5;
+  gl_Position = vec4(a_position, 0.0, 1.0);
+}`;
+  const fs = `precision highp float;
+uniform float u_time;
+uniform vec2 u_resolution;
+uniform vec2 u_mouse;
+varying vec2 v_texCoord;
+
+void main() {
+    vec2 uv = v_texCoord;
+    vec2 mouse = u_mouse / u_resolution;
+    
+    // Create a subtle grid
+    vec2 gridUv = fract(uv * 20.0);
+    float grid = smoothstep(0.02, 0.0, abs(gridUv.x - 0.5)) + smoothstep(0.02, 0.0, abs(gridUv.y - 0.5));
+    grid *= 0.05;
+    
+    // Animated glowing gradients
+    float d1 = length(uv - vec2(0.2, 0.8) + vec2(sin(u_time * 0.5) * 0.1));
+    float d2 = length(uv - vec2(0.8, 0.2) + vec2(cos(u_time * 0.7) * 0.1));
+    
+    vec3 color1 = vec3(0.388, 0.4, 0.945); // Indigo
+    vec3 color2 = vec3(0.063, 0.725, 0.506); // Emerald
+    
+    vec3 finalColor = vec3(0.035, 0.035, 0.043); // #09090B
+    finalColor += color1 * (0.15 / (d1 + 0.5));
+    finalColor += color2 * (0.1 / (d2 + 0.6));
+    finalColor += grid * color1;
+    
+    // Mouse interaction
+    float mouseDist = length(uv - mouse);
+    finalColor += color1 * (0.05 / (mouseDist + 0.2));
+    
+    gl_FragColor = vec4(finalColor, 1.0);
+}`;
+  function cs(type, src) {
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    return s;
+  }
+  const prog = gl.createProgram();
+  gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
+  gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
+  gl.linkProgram(prog);
+  gl.useProgram(prog);
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+  const pos = gl.getAttribLocation(prog, 'a_position');
+  gl.enableVertexAttribArray(pos);
+  gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+  const uTime = gl.getUniformLocation(prog, 'u_time');
+  const uRes = gl.getUniformLocation(prog, 'u_resolution');
+  const uMouse = gl.getUniformLocation(prog, 'u_mouse');
+
+  // u_mouse is in pixel coordinates matching u_resolution (ShaderToy convention).
+  // Shaders that need normalized coords should use: u_mouse / u_resolution.
+  let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+  window.addEventListener('mousemove', (event) => {
+    const rect = canvas.getBoundingClientRect();
+    if (rect.width && rect.height) {
+      const nx = (event.clientX - rect.left) / rect.width;
+      const ny = 1.0 - (event.clientY - rect.top) / rect.height;
+      mouse.x = nx * canvas.width;
+      mouse.y = ny * canvas.height;
+    }
+  });
+
+  function render(t) {
+    if (typeof ResizeObserver === 'undefined') syncSize();
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    if (uTime) gl.uniform1f(uTime, t * 0.001);
+    if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
+    if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    requestAnimationFrame(render);
+  }
+  render(0);
+})();
+</script>
+</div>
+<!-- STITCH_SHADER_END:ANIMATION_2 -->
+<div class="relative z-10 max-w-container-max mx-auto px-gutter text-center">
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg mb-stack-sm reveal active">Hi, I'm Nico.</h1>
+<p class="font-headline-sm text-headline-sm text-on-surface-variant max-w-2xl mx-auto mb-stack-md reveal delay-100 active">Full Stack Developer crafting fast, scalable, and intuitive digital experiences.</p>
+<p class="font-body-lg text-body-lg text-outline mb-stack-lg reveal delay-200 active">Expertise in Laravel, Next.js, React Native, and TypeScript.</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center reveal delay-300 active">
+<a class="bg-primary text-on-primary px-8 py-4 rounded-xl font-semibold hover:shadow-[0_0_20px_rgba(192,193,255,0.4)] transition-all" href="#projects">View Projects</a>
+<a class="border border-white/15 bg-white/5 backdrop-blur-sm text-on-surface px-8 py-4 rounded-xl font-semibold hover:bg-white/10 transition-all" href="#contact">Contact Me</a>
+</div>
+</div>
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+<span class="material-symbols-outlined text-outline">expand_more</span>
+</div>
+</section>
+<!-- About Section -->
+<section class="py-section-gap max-w-container-max mx-auto px-gutter" id="about">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-stack-lg items-center">
+<div class="reveal">
+<h2 class="font-headline-md text-headline-md mb-stack-md">Engineering digital solutions with passion.</h2>
+<div class="space-y-stack-md text-on-surface-variant">
+<p class="">I specialize in building robust web and mobile applications that bridge the gap between complex functionality and seamless user experience. My journey in development is driven by a constant curiosity for new technologies and a commitment to clean, maintainable code.</p>
+<p class="">Whether it's architecting a scalable backend with Laravel or crafting fluid interfaces with React, I prioritize performance and accessibility in every line of code I write.</p>
+</div>
+</div>
+<div class="glass-card p-stack-lg rounded-xl reveal delay-200">
+<div class="flex items-center gap-4 mb-stack-md">
+<div class="w-16 h-16 rounded-full bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-4xl">person</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm">Nico</div>
+<div class="text-secondary font-label-mono text-label-mono">AVAILABLE FOR FREELANCE</div>
+</div>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between border-b border-outline-variant/10 pb-2">
+<span class="text-on-surface-variant">Location</span>
+<span class="text-on-surface">Philippines</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant/10 pb-2">
+<span class="text-on-surface-variant">Experience</span>
+<span class="text-on-surface">5+ Years</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant/10 pb-2">
+<span class="text-on-surface-variant">Languages</span>
+<span class="text-on-surface">English, Tagalog</span>
+</div>
+</div>
+<div class="mt-stack-md">
+<div class="font-label-mono text-label-mono text-outline uppercase mb-2">Main Stack</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-primary/10 border border-primary/20 rounded-full text-primary text-xs">TypeScript</span>
+<span class="px-3 py-1 bg-primary/10 border border-primary/20 rounded-full text-primary text-xs">Laravel</span>
+<span class="px-3 py-1 bg-primary/10 border border-primary/20 rounded-full text-primary text-xs">React Native</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Tech Stack Bento Grid -->
+<section class="py-section-gap bg-surface-container-lowest/50">
+<div class="max-w-container-max mx-auto px-gutter">
+<h2 class="font-headline-md text-headline-md mb-stack-lg text-center reveal">The Toolbox</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-stack-md">
+<!-- Frontend -->
+<div class="glass-card p-stack-md rounded-xl glow-hover reveal">
+<span class="material-symbols-outlined text-primary mb-2">auto_awesome</span>
+<h3 class="font-headline-sm text-headline-sm mb-4">Frontend</h3>
+<div class="flex flex-wrap gap-2">
+<span class="font-label-mono text-label-mono px-2 py-1 bg-surface-container-high rounded border border-outline-variant/20">Next.js</span>
+<span class="font-label-mono text-label-mono px-2 py-1 bg-surface-container-high rounded border border-outline-variant/20">React</span>
+<span class="font-label-mono text-label-mono px-2 py-1 bg-surface-container-high rounded border border-outline-variant/20">Tailwind</span>
+<span class="font-label-mono text-label-mono px-2 py-1 bg-surface-container-high rounded border border-outline-variant/20">TS</span>
+</div>
+</div>
+<!-- Backend -->
+<div class="glass-card p-stack-md rounded-xl glow-hover reveal delay-100">
+<span class="material-symbols-outlined text-secondary mb-2">database</span>
+<h3 class="font-headline-sm text-headline-sm mb-4">Backend</h3>
+<div class="flex flex-wrap gap-2">
+<span class="font-label-mono text-label-mono px-2 py-1 bg-surface-container-high rounded border border-outline-variant/20">Laravel</span>
+<span class="font-label-mono text-label-mono px-2 py-1 bg-surface-container-high rounded border border-outline-variant/20">PHP</span>
+<span class="font-label-mono text-label-mono px-2 py-1 bg-surface-container-high rounded border border-outline-variant/20">Node.js</span>
+</div>
+</div>
+<!-- Mobile -->
+<div class="glass-card p-stack-md rounded-xl glow-hover reveal delay-200">
+<span class="material-symbols-outlined text-primary mb-2">smartphone</span>
+<h3 class="font-headline-sm text-headline-sm mb-4">Mobile</h3>
+<div class="flex flex-wrap gap-2">
+<span class="font-label-mono text-label-mono px-2 py-1 bg-surface-container-high rounded border border-outline-variant/20">React Native</span>
+<span class="font-label-mono text-label-mono px-2 py-1 bg-surface-container-high rounded border border-outline-variant/20">Expo</span>
+</div>
+</div>
+<!-- Infrastructure -->
+<div class="glass-card p-stack-md rounded-xl glow-hover reveal delay-300">
+<span class="material-symbols-outlined text-tertiary mb-2">cloud</span>
+<h3 class="font-headline-sm text-headline-sm mb-4">Tools</h3>
+<div class="flex flex-wrap gap-2">
+<span class="font-label-mono text-label-mono px-2 py-1 bg-surface-container-high rounded border border-outline-variant/20">Docker</span>
+<span class="font-label-mono text-label-mono px-2 py-1 bg-surface-container-high rounded border border-outline-variant/20">Git</span>
+<span class="font-label-mono text-label-mono px-2 py-1 bg-surface-container-high rounded border border-outline-variant/20">Vercel</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Projects -->
+<section class="py-section-gap max-w-container-max mx-auto px-gutter" id="projects">
+<h2 class="font-headline-md text-headline-md mb-stack-lg reveal">Featured Projects</h2>
+<div class="space-y-section-gap">
+<!-- Project 1 -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-stack-lg items-center reveal">
+<div class="lg:col-span-7 aspect-video rounded-3xl overflow-hidden glass-card group">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-700" data-alt="A cinematic, high-contrast screenshot of a sleek web dashboard UI. The interface features dark mode aesthetics with primary indigo accents, translucent glassmorphism panels, and vibrant data visualization charts. The lighting is soft and ambient, emphasizing a professional developer tool aesthetic with a futuristic touch. Clean typography and sharp edges define the visual style." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCUGKl5tGygAJV8ZDxepD4EDUwdWmdRXbu21fTyeIGexz83zQsb9e9zXc4mjdfTtLK6bFcBQO3pznpN32ie1hmod06Z3QNhJ-GNbwrhnRNTHhlM7mXrfuUZ8Jcf0SiQ_vol3D6Vhr-d_fEqj3Vupy8LZhEEcINviDEZAmOZ8cI-Uun1_iMHU5l4EUjN1Pxaqc0sxqsvuNl73oDrZrykrZqmgJ9unGBgjwttgQX1tJr9Y_E8aidux-FwqX2wK2f24Lz8mVyUi5-vsbY')"></div>
+</div>
+<div class="lg:col-span-5">
+<div class="font-label-mono text-label-mono text-primary mb-2">WEB APPLICATION</div>
+<h3 class="font-headline-md text-headline-md mb-4">Nova Analytics Suite</h3>
+<p class="text-on-surface-variant mb-6">A real-time analytics platform built with Next.js and Laravel. Features live socket updates, complex data aggregation, and highly customizable reporting dashboards.</p>
+<div class="flex flex-wrap gap-2 mb-8">
+<span class="px-3 py-1 bg-surface-container-high rounded-full text-xs text-outline border border-outline-variant/20">Next.js</span>
+<span class="px-3 py-1 bg-surface-container-high rounded-full text-xs text-outline border border-outline-variant/20">Laravel</span>
+<span class="px-3 py-1 bg-surface-container-high rounded-full text-xs text-outline border border-outline-variant/20">Recharts</span>
+</div>
+<div class="flex gap-4">
+<button class="flex items-center gap-2 text-primary font-semibold hover:translate-x-1 transition-transform">
+                            Live Demo <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined">code</span> GitHub
+                        </button>
+</div>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-stack-lg items-center reveal">
+<div class="lg:col-span-5 order-2 lg:order-1">
+<div class="font-label-mono text-label-mono text-secondary mb-2">MOBILE APP</div>
+<h3 class="font-headline-md text-headline-md mb-4">Zenith Wallet</h3>
+<p class="text-on-surface-variant mb-6">Cross-platform cryptocurrency wallet using React Native. Implements biometrics, secure storage, and integrated fiat-to-crypto gateways.</p>
+<div class="flex flex-wrap gap-2 mb-8">
+<span class="px-3 py-1 bg-surface-container-high rounded-full text-xs text-outline border border-outline-variant/20">React Native</span>
+<span class="px-3 py-1 bg-surface-container-high rounded-full text-xs text-outline border border-outline-variant/20">Node.js</span>
+<span class="px-3 py-1 bg-surface-container-high rounded-full text-xs text-outline border border-outline-variant/20">Firebase</span>
+</div>
+<div class="flex gap-4">
+<button class="flex items-center gap-2 text-primary font-semibold hover:translate-x-1 transition-transform">
+                            Case Study <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="lg:col-span-7 aspect-video rounded-3xl overflow-hidden glass-card order-1 lg:order-2">
+<div class="w-full h-full bg-cover bg-center" data-alt="A premium mobile application UI mockup showcasing a digital wallet interface. The design is displayed on a dark smartphone screen against a minimal studio background with moody blue and purple rim lighting. The screen features glassmorphism cards, glowing transaction history, and a modern biometric login prompt. The aesthetic is clean, technical, and fintech-focused." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD8IWoMj60POUK0TEhpqZJn8ky1HLmF50hO1oT3jECL3mD5inVIz6zmm7RCM1HWF_c27-dzWSwUO7D95j-uqBIYpXxD62nk0-TdOURfZK8Hd1ypUKIGjMp6y170PIuXAGVUw9MKRKCa4gwzDAyH7kvTgcoUL6WDTYs07SYJyhJTFojSWWo5aJz_BlosgOg4gRUeSi0rhTPULXWvEhoxR0qbzO-BoE4bFhXoVUCT2GzOal2s19PDLBZqDmulGz4vEzE1hsG6XwsQBSU')"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Experience Timeline -->
+<section class="py-section-gap bg-surface">
+<div class="max-w-3xl mx-auto px-gutter">
+<h2 class="font-headline-md text-headline-md mb-stack-lg text-center reveal">Career Milestones</h2>
+<div class="relative border-l border-outline-variant/20 ml-4 space-y-stack-lg">
+<div class="relative pl-8 reveal">
+<div class="absolute -left-[9px] top-0 w-4 h-4 bg-primary rounded-full ring-4 ring-primary/20"></div>
+<div class="font-label-mono text-label-mono text-primary mb-1">2022 - PRESENT</div>
+<h4 class="font-headline-sm text-headline-sm">Senior Full Stack Engineer</h4>
+<div class="text-on-surface-variant mb-2">TechFlow Solutions</div>
+<p class="text-outline">Leading development of core product features using Laravel and React. Improved platform performance by 40% through database optimization and caching strategies.</p>
+</div>
+<div class="relative pl-8 reveal delay-100">
+<div class="absolute -left-[9px] top-0 w-4 h-4 bg-surface-container-highest rounded-full ring-4 ring-white/5"></div>
+<div class="font-label-mono text-label-mono text-outline mb-1">2020 - 2022</div>
+<h4 class="font-headline-sm text-headline-sm">Web Developer</h4>
+<div class="text-on-surface-variant mb-2">Creative Pulse Agency</div>
+<p class="text-outline">Developed high-end landing pages and complex web applications for international clients. Specialized in Next.js and headless CMS integrations.</p>
+</div>
+<div class="relative pl-8 reveal delay-200">
+<div class="absolute -left-[9px] top-0 w-4 h-4 bg-surface-container-highest rounded-full ring-4 ring-white/5"></div>
+<div class="font-label-mono text-label-mono text-outline mb-1">2018 - 2020</div>
+<h4 class="font-headline-sm text-headline-sm">Junior Developer</h4>
+<div class="text-on-surface-variant mb-2">Startup Incubator</div>
+<p class="text-outline">Started as an intern and quickly moved to a full-time role focusing on PHP/MySQL backends and jQuery frontends before migrating to modern frameworks.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Skills Grid -->
+<section class="py-section-gap max-w-container-max mx-auto px-gutter">
+<h2 class="font-headline-md text-headline-md mb-stack-lg reveal">Core Expertise</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-stack-md">
+<div class="glass-card p-stack-md rounded-xl reveal">
+<span class="material-symbols-outlined text-primary mb-4 text-3xl">api</span>
+<h4 class="font-headline-sm text-headline-sm mb-2">REST API Design</h4>
+<p class="text-on-surface-variant">Architecting scalable, secure, and well-documented APIs that serve millions of requests.</p>
+</div>
+<div class="glass-card p-stack-md rounded-xl reveal delay-100">
+<span class="material-symbols-outlined text-secondary mb-4 text-3xl">brush</span>
+<h4 class="font-headline-sm text-headline-sm mb-2">UI/UX Implementation</h4>
+<p class="text-on-surface-variant">Translating complex design systems into pixel-perfect, accessible React components.</p>
+</div>
+<div class="glass-card p-stack-md rounded-xl reveal delay-200">
+<span class="material-symbols-outlined text-tertiary mb-4 text-3xl">speed</span>
+<h4 class="font-headline-sm text-headline-sm mb-2">Performance Tuning</h4>
+<p class="text-on-surface-variant">Optimizing Core Web Vitals, database queries, and bundle sizes for maximum speed.</p>
+</div>
+<div class="glass-card p-stack-md rounded-xl reveal delay-300">
+<span class="material-symbols-outlined text-primary mb-4 text-3xl">motion_photos_on</span>
+<h4 class="font-headline-sm text-headline-sm mb-2">Motion Graphics</h4>
+<p class="text-on-surface-variant">Adding life to interfaces with subtle animations using Framer Motion and GSAP.</p>
+</div>
+<div class="glass-card p-stack-md rounded-xl reveal delay-400">
+<span class="material-symbols-outlined text-secondary mb-4 text-3xl">videocam</span>
+<h4 class="font-headline-sm text-headline-sm mb-2">Video Production</h4>
+<p class="text-on-surface-variant">Editing professional software demos and educational content for developer communities.</p>
+</div>
+<div class="glass-card p-stack-md rounded-xl reveal delay-500">
+<span class="material-symbols-outlined text-tertiary mb-4 text-3xl">security</span>
+<h4 class="font-headline-sm text-headline-sm mb-2">App Security</h4>
+<p class="text-on-surface-variant">Implementing OAuth2, JWT, and modern security practices to protect user data.</p>
+</div>
+</div>
+</section>
+<!-- GitHub Activity & Stats -->
+<section class="py-section-gap bg-surface-container-low">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="glass-card p-stack-lg rounded-3xl reveal">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-stack-md mb-stack-lg">
+<div>
+<h2 class="font-headline-md text-headline-md">Open Source Activity</h2>
+<p class="text-on-surface-variant">Tracking commits and contribution milestones across GitHub.</p>
+</div>
+<a class="bg-surface-container-high px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-surface-container-highest transition-all" href="https://github.com">
+<span class="material-symbols-outlined">launch</span> @nico-dev
+                    </a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-stack-md mb-stack-lg">
+<div class="p-stack-md bg-background/40 rounded-xl border border-outline-variant/10 text-center">
+<div class="text-3xl font-bold text-primary">1.2k+</div>
+<div class="text-caption font-label-mono text-outline">COMMITS</div>
+</div>
+<div class="p-stack-md bg-background/40 rounded-xl border border-outline-variant/10 text-center">
+<div class="text-3xl font-bold text-secondary">45</div>
+<div class="text-caption font-label-mono text-outline">REPOS</div>
+</div>
+<div class="p-stack-md bg-background/40 rounded-xl border border-outline-variant/10 text-center">
+<div class="text-3xl font-bold text-tertiary">200+</div>
+<div class="text-caption font-label-mono text-outline">STARS</div>
+</div>
+<div class="p-stack-md bg-background/40 rounded-xl border border-outline-variant/10 text-center">
+<div class="text-3xl font-bold text-primary-fixed-dim">12</div>
+<div class="text-caption font-label-mono text-outline">FORKS</div>
+</div>
+</div>
+<!-- Mock GitHub Contribution Graph -->
+<div class="overflow-x-auto">
+<div class="min-w-[800px] flex gap-1 items-end h-24">
+<!-- JS loop to generate bars -->
+<script>
+                            for(let i=0; i<52; i++) {
+                                const height = Math.floor(Math.random() * 60) + 10;
+                                const opacity = height / 70;
+                                document.write(`<div class="flex-1 bg-primary rounded-t-sm" style="height: ${height}%; opacity: ${opacity}"></div>`);
+                            }
+                        </script><div class="flex-1 bg-primary rounded-t-sm" style="height: 23%; opacity: 0.32857142857142857"></div><div class="flex-1 bg-primary rounded-t-sm" style="height: 18%; opacity: 0.2571428571428571"></div><div class="flex-1 bg-primary rounded-t-sm" style="height: 63%; opacity: 0.9"></div><div class="flex-1 bg-primary rounded-t-sm" style="height: 68%; opacity: 0.9714285714285714"></div><div class="flex-1 bg-primary rounded-t-sm" style="height: 25%; opacity: 0.35714285714285715"></div><div class="flex-1 bg-primary rounded-t-sm" style="height: 33%; opacity: 0.4714285714285714"></div><div class="flex-1 bg-primary rounded-t-sm" style="height: 27%; opacity: 0.38571428571428573"></div><div class="flex-1 bg-primary rounded-t-sm" style="height: 39%; opacity: 0.5571428571428572"></div><div class="flex-1 bg-primary rounded-t-sm" style="height: 21%; opacity: 0.3"></div><div class="flex-1 bg-primary rounded-t-sm" style="height: 31%; opacity: 0.44285714285714284"></div><div class="flex-1 bg-primary rounded-t-sm" style="height: 27%; opacity: 0.38571428571428573"></div><div class="flex-1 bg-primary rounded-t-sm" style="height: 58%; opacity: 0.8285714285714286"></div><div class="flex-1 bg-primary rounded-t-sm" style="height: 51%; opacity: 0.7285714285714285"></div><div class="flex-1 bg-primary rounded-t-sm" style="height: 59%; opacity: 0.8428571428571429"></div><div class="flex-1 bg-primary rounded-t-sm" style="height: 60%; opacity: 0.8571428571428571"></div><div class="flex-1 bg-primary rounded-t-sm" style="height: 58%; opacity: 0.8285714285714286"></div><div class="flex-1 bg-primary rounded-t-sm" style="height: 69%; opacity: 0.9857142857142858"></div><div class="flex-1 bg-primary rounded-t-sm" style="height: 13%; opacity: 0.18571428571428572"></div><div class="flex-1 bg-primary rounded-t-sm" style="height: 53%; opacity: 0.7571428571428571"></div><div class="flex-1 bg-primary rounded-t-sm" style="height: 25%; opacity: 0.35714285714285715"></div><div class="flex-1 bg-primary rounded-t-sm" style="height: 59%; opacity: 0.8428571428571429"></div><div class="flex-1 bg-primary rounded-t-sm" style="height: 66%; opacity: 0.9428571428571428"></div><div class="flex-1 bg-primary rounded-t-sm" style="height: 23%; opacity: 0.32857142857142857"></div><div class="flex-1 bg-primary rounded-t-sm" style="height: 10%; opacity: 0.14285714285714285"></div><div class="flex-1 bg-primary rounded-t-sm" style="height: 58%; opacity: 0.8285714285714286"></div><div class="flex-1 bg-primary rounded-t-sm" style="height: 25%; opacity: 0.35714285714285715"></div><div class="flex-1 bg-primary rounded-t-sm" style="height: 11%; opacity: 0.15714285714285714"></div><div class="flex-1 bg-primary rounded-t-sm" style="height: 13%; opacity: 0.18571428571428572"></div><div class="flex-1 bg-primary rounded-t-sm" style="height: 69%; opacity: 0.9857142857142858"></div><div class="flex-1 bg-primary rounded-t-sm" style="height: 69%; opacity: 0.9857142857142858"></div><div class="flex-1 bg-primary rounded-t-sm" style="height: 35%; opacity: 0.5"></div><div class="flex-1 bg-primary rounded-t-sm" style="height: 45%; opacity: 0.6428571428571429"></div><div class="flex-1 bg-primary rounded-t-sm" style="height: 42%; opacity: 0.6"></div><div class="flex-1 bg-primary rounded-t-sm" style="height: 32%; opacity: 0.45714285714285713"></div><div class="flex-1 bg-primary rounded-t-sm" style="height: 16%; opacity: 0.22857142857142856"></div><div class="flex-1 bg-primary rounded-t-sm" style="height: 57%; opacity: 0.8142857142857143"></div><div class="flex-1 bg-primary rounded-t-sm" style="height: 65%; opacity: 0.9285714285714286"></div><div class="flex-1 bg-primary rounded-t-sm" style="height: 15%; opacity: 0.21428571428571427"></div><div class="flex-1 bg-primary rounded-t-sm" style="height: 18%; opacity: 0.2571428571428571"></div><div class="flex-1 bg-primary rounded-t-sm" style="height: 27%; opacity: 0.38571428571428573"></div><div class="flex-1 bg-primary rounded-t-sm" style="height: 55%; opacity: 0.7857142857142857"></div><div class="flex-1 bg-primary rounded-t-sm" style="height: 18%; opacity: 0.2571428571428571"></div><div class="flex-1 bg-primary rounded-t-sm" style="height: 31%; opacity: 0.44285714285714284"></div><div class="flex-1 bg-primary rounded-t-sm" style="height: 69%; opacity: 0.9857142857142858"></div><div class="flex-1 bg-primary rounded-t-sm" style="height: 60%; opacity: 0.8571428571428571"></div><div class="flex-1 bg-primary rounded-t-sm" style="height: 57%; opacity: 0.8142857142857143"></div><div class="flex-1 bg-primary rounded-t-sm" style="height: 22%; opacity: 0.3142857142857143"></div><div class="flex-1 bg-primary rounded-t-sm" style="height: 28%; opacity: 0.4"></div><div class="flex-1 bg-primary rounded-t-sm" style="height: 62%; opacity: 0.8857142857142857"></div><div class="flex-1 bg-primary rounded-t-sm" style="height: 48%; opacity: 0.6857142857142857"></div><div class="flex-1 bg-primary rounded-t-sm" style="height: 34%; opacity: 0.4857142857142857"></div><div class="flex-1 bg-primary rounded-t-sm" style="height: 20%; opacity: 0.2857142857142857"></div>
+</div>
+<div class="flex justify-between mt-2 text-caption text-outline font-label-mono">
+<span class="">Jan</span><span class="">Mar</span><span class="">May</span><span class="">Jul</span><span class="">Sep</span><span class="">Nov</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Blog Preview -->
+<section class="py-section-gap max-w-container-max mx-auto px-gutter">
+<div class="flex justify-between items-end mb-stack-lg">
+<h2 class="font-headline-md text-headline-md">Latest Writings</h2>
+<a class="text-primary font-semibold flex items-center gap-1 hover:gap-2 transition-all" href="#">All Posts <span class="material-symbols-outlined">chevron_right</span></a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-stack-md">
+<div class="group reveal">
+<div class="aspect-video rounded-2xl overflow-hidden mb-stack-sm glass-card">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="A minimalist and artistic representation of modern web development. The image features glowing neon lines forming a grid over a dark background, with floating code snippets in JetBrains Mono font. The color palette is dominated by deep charcoal, bright cyan, and indigo, creating a high-tech editorial feel for a blog header." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDVwWGCXqJJXm4sRH9ZNhu9sIzGLHXunRuwAIlFQyZ8u0q-o3vSwODEUsXtKiDTp7KbfIuNFIVWM0CSWN2dgot_3MX_y9SNjuloiWMfsZnC65InaJ2ztl2gXlq8G9P-Ozv2F7YJI3LPhyeNUnCjW4JsQn1yj7sC5SvXhH6mdgV2BkgtyFDf_YNaZjW4gNasaEyx-LPV3nfIg7l-eUIiXlx62d0YyNj2zYDEOpSBBjtb_73tA_p5umfK3THC6ITTZ354f8jGiY-o0V8')"></div>
+</div>
+<div class="font-label-mono text-caption text-outline mb-2">OCT 12, 2024 • 5 MIN READ</div>
+<h4 class="font-headline-sm text-headline-sm mb-2 group-hover:text-primary transition-colors">Mastering Laravel Performance</h4>
+<p class="text-on-surface-variant line-clamp-2">How we optimized our database queries to handle 10x the traffic without increasing infrastructure costs.</p>
+</div>
+<div class="group reveal delay-100">
+<div class="aspect-video rounded-2xl overflow-hidden mb-stack-sm glass-card">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="A macro shot of a sleek developer workspace with a high-end mechanical keyboard and a high-refresh monitor showing colorful VS Code theme. The lighting is moody with warm desk lamp highlights and cool monitor glow. Deep shadows and vibrant accents create a professional and focused atmosphere for a technical article." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB6B18kRKtdn33bA-tknYnCLTWqNAc9CNKuZOZSZgQRhV2Zf3ilE46JpTW2_0MJbZ7vRmIzxE0vEjMiLWehVbtUbobBBrECrdR8ovEh9aTOHWEhK2qvh3mW4z8VTdOl5c7Pynx_tIuXj4h_15nsuv9_VnkEWnHGNlv4vzZ2viT1h0c54VOB-b2_h8yEbDiHQulMoMiDXtdJYyMAVxQv6R1ne8r1rZEIjOM4wegui7yv8QG924JF5gz0XLUmde54zzuZbHMrv9UC6Lw')"></div>
+</div>
+<div class="font-label-mono text-caption text-outline mb-2">SEP 28, 2024 • 8 MIN READ</div>
+<h4 class="font-headline-sm text-headline-sm mb-2 group-hover:text-primary transition-colors">The Future of React Native</h4>
+<p class="text-on-surface-variant line-clamp-2">Exploring the New Architecture, TurboModules, and what the JSI brings to mobile performance.</p>
+</div>
+<div class="group reveal delay-200">
+<div class="aspect-video rounded-2xl overflow-hidden mb-stack-sm glass-card">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="Abstract 3D geometric shapes interacting in a digital void. Translucent glass spheres, chrome cylinders, and glowing particles. The lighting is high-key and clean, with a sophisticated palette of white, primary indigo, and soft gray. The mood is minimalist, futuristic, and editorial." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBlgjv8ox3zVYUHX1EIQqt4nQMNNlJtHU8SYjg1XLTg-zMn0F_XwwgbA6ggYg9DPmhojRU5WdC-i8AUq6ad6uWk5CVJ8QgmN0XDkU0zoSUdlMKrCfp1_JBY5dTzAt8XFk1GPebs4KYAGC1hIiik80hT4lyW8FqsrxayYApQvW3KUIythHHdK496LqMfjGCeIhs_hzthrpspYL5nfng2j9Z0ukMF7giVvxgVPga6WyDRaPbxyfuRKU5jijqDzZfyZ28gWcw42ejcG2w')"></div>
+</div>
+<div class="font-label-mono text-caption text-outline mb-2">AUG 15, 2024 • 4 MIN READ</div>
+<h4 class="font-headline-sm text-headline-sm mb-2 group-hover:text-primary transition-colors">Clean Code in TypeScript</h4>
+<p class="text-on-surface-variant line-clamp-2">Moving beyond 'any' and leveraging advanced types for more resilient applications.</p>
+</div>
+</div>
+</section>
+<!-- Uses Preview -->
+<section class="py-section-gap bg-surface-container-lowest" id="uses">
+<div class="max-w-container-max mx-auto px-gutter">
+<h2 class="font-headline-md text-headline-md mb-stack-lg reveal">Gear &amp; Setup</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-stack-md">
+<div class="glass-card p-stack-md rounded-xl flex items-center gap-stack-md reveal">
+<div class="w-16 h-16 bg-surface-container-high rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">laptop_mac</span>
+</div>
+<div>
+<div class="font-body-lg font-semibold">MacBook Pro M3</div>
+<div class="text-caption text-outline">Primary Workstation</div>
+</div>
+</div>
+<div class="glass-card p-stack-md rounded-xl flex items-center gap-stack-md reveal delay-100">
+<div class="w-16 h-16 bg-surface-container-high rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary">monitor</span>
+</div>
+<div>
+<div class="font-body-lg font-semibold">Dell UltraSharp 27"</div>
+<div class="text-caption text-outline">4K Productivity</div>
+</div>
+</div>
+<div class="glass-card p-stack-md rounded-xl flex items-center gap-stack-md reveal delay-200">
+<div class="w-16 h-16 bg-surface-container-high rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary">keyboard</span>
+</div>
+<div>
+<div class="font-body-lg font-semibold">Keychron K2</div>
+<div class="text-caption text-outline">Brown Switches</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-section-gap max-w-container-max mx-auto px-gutter" id="contact">
+<div class="glass-card p-stack-lg rounded-3xl text-center reveal">
+<h2 class="font-display-lg-mobile md:font-headline-md text-display-lg-mobile md:text-headline-md mb-stack-sm">Let's build something together.</h2>
+<p class="text-on-surface-variant max-w-xl mx-auto mb-stack-lg">Whether you have a question or just want to say hi, my inbox is always open.</p>
+<div class="flex flex-wrap justify-center gap-4">
+<a class="bg-primary text-on-primary px-8 py-4 rounded-xl font-semibold flex items-center gap-2 hover:scale-105 transition-all" href="mailto:hello@nico.dev">
+<span class="material-symbols-outlined">mail</span> Email Me
+                </a>
+<div class="flex gap-2">
+<a class="w-14 h-14 bg-surface-container-high rounded-xl flex items-center justify-center hover:bg-surface-container-highest transition-all" href="#">
+<span class="material-symbols-outlined">link</span>
+</a>
+<a class="w-14 h-14 bg-surface-container-high rounded-xl flex items-center justify-center hover:bg-surface-container-highest transition-all" href="#">
+<span class="material-symbols-outlined">description</span>
+</a>
+</div>
+</div>
+<div class="mt-stack-lg flex justify-center gap-8 border-t border-outline-variant/10 pt-stack-md">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-mono text-label-mono" href="#">GitHub</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-mono text-label-mono" href="#">LinkedIn</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-mono text-label-mono" href="#">X / Twitter</a>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full py-stack-lg border-t border-outline-variant/10 bg-background dark:bg-background">
+<div class="max-w-container-max mx-auto px-gutter flex flex-col md:flex-row justify-between items-center gap-base">
+<div class="font-label-mono text-label-mono text-on-surface">NICO.DEV</div>
+<div class="font-caption text-caption text-secondary dark:text-secondary-fixed-dim">© 2024 Nico. Built with Next.js</div>
+<div class="flex gap-stack-md">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-caption text-caption" href="#">GitHub</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-caption text-caption" href="#">LinkedIn</a>
+</div>
+</div>
+</footer>
+<script>
+        // Scroll Reveal Animation
+        const reveals = document.querySelectorAll('.reveal');
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        reveals.forEach(el => revealObserver.observe(el));
+
+        // Smooth scroll for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Dynamic Header Shadow on Scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 20) {
+                nav.classList.add('shadow-xl');
+            } else {
+                nav.classList.remove('shadow-xl');
+            }
+        });
+    </script>
+
+
+</body></html>
