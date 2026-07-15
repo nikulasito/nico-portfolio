@@ -556,7 +556,7 @@ main {
   align-items: center;
   gap: 24px;
   padding: 13px 0;
-  animation: marquee 30s linear infinite;
+  animation: marquee 45s linear infinite;
 }
 
 .hero-marquee span {
