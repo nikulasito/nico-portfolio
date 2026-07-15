@@ -36,7 +36,7 @@ const projects = [
     type: "web" as const,
     tone: "orange",
     note: "Website and deployment",
-    href: "https://github.com/uxdesignninja/Tukodph",
+    href: "https://tukodph.com/",
   },
   {
     number: "03",
