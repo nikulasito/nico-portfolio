@@ -15,19 +15,19 @@ const projects = [
     tone: "lime",
     note: "Private production system",
   },
+  // {
+  //   number: "02",
+  //   title: "Homeowner Agent Connect",
+  //   category: "Product engineering / React",
+  //   description:
+  //     "Feature development and interface refinement for a property platform, including buyer activity, journey progress, client profiles, dashboards, alerts, and GraphQL-driven workflows.",
+  //   stack: ["React", "TypeScript", "GraphQL", "Product UI", "Git workflow"],
+  //   type: "platform" as const,
+  //   tone: "blue",
+  //   note: "Commercial product work",
+  // },
   {
     number: "02",
-    title: "Homeowner Agent Connect",
-    category: "Product engineering / React",
-    description:
-      "Feature development and interface refinement for a property platform, including buyer activity, journey progress, client profiles, dashboards, alerts, and GraphQL-driven workflows.",
-    stack: ["React", "TypeScript", "GraphQL", "Product UI", "Git workflow"],
-    type: "platform" as const,
-    tone: "blue",
-    note: "Commercial product work",
-  },
-  {
-    number: "03",
     title: "TukodPH Digital Experience",
     category: "Web design & development / Next.js",
     description:
@@ -39,7 +39,7 @@ const projects = [
     href: "https://github.com/uxdesignninja/Tukodph",
   },
   {
-    number: "04",
+    number: "03",
     title: "Reverse Focus Media Production",
     category: "Post-production / Motion",
     description:
