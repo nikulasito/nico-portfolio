@@ -20,7 +20,8 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{ children: ReactNode }>) {
-  const googleTagId = process.env.NEXT_PUBLIC_GOOGLE_TAG_ID;
+  const googleTagId =
+    process.env.NEXT_PUBLIC_GOOGLE_TAG_ID ?? "G-4R8BD52G6F";
 
   return (
     <html lang="en" suppressHydrationWarning>
