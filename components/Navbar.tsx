@@ -45,7 +45,7 @@ export function Navbar() {
         ))}
       </nav>
 
-      <a className="nav-cta" href="mailto:n.alumbro@gmail.com?subject=Project%20inquiry">
+      <a className="nav-cta" href="#contact">
         Start a project <span aria-hidden="true">↗</span>
       </a>
 
@@ -70,7 +70,7 @@ export function Navbar() {
           ))}
           <a
             className="mobile-contact"
-            href="mailto:n.alumbro@gmail.com?subject=Project%20inquiry"
+            href="#contact"
             onClick={() => setOpen(false)}
           >
             Start a project ↗
