@@ -56,6 +56,18 @@ const projects = [
     note: "Weekly media production",
     href: "https://vimeo.com/voxelworksdigital",
   },
+  {
+    number: "04",
+    title: "Watershed Rush Game",
+    category: "Game Development",
+    description:
+      "An educational endless-runner game developed for DENR Region X that turns watershed conservation into an interactive experience. Players navigate a flowing watershed environment, collect positive environmental actions, avoid hazards such as pollution and forest destruction, and learn about watershed protection through gameplay.",
+    stack: ["HTML5", "CSS3", "JavaScript", "Phaser 3", "Netlify"],
+    type: "motion" as const,
+    tone: "rose",
+    note: "Interactive environmental education game",
+    href: "https://watershedrush.netlify.app/",
+  },
 ];
 
 const capabilityGroups = [
