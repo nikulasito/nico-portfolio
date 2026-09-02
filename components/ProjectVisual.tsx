@@ -1,5 +1,5 @@
 type ProjectVisualProps = {
-  type: "system" | "platform" | "web" | "motion";
+  type: "system" | "platform" | "web" | "motion" | "game";
 };
 
 export function ProjectVisual({ type }: ProjectVisualProps) {
@@ -70,6 +70,32 @@ export function ProjectVisual({ type }: ProjectVisualProps) {
           <div className="web-card-title" />
           <div className="web-card-grid"><span /><span /><span /><span /></div>
         </div>
+      </div>
+    );
+  }
+
+  if (type === "game") {
+    return (
+      <div className="project-visual game-visual" aria-hidden="true">
+        <div className="game-sky">
+          <span />
+          <span />
+        </div>
+        <div className="game-hud">
+          <b>WATERSHED RUSH</b>
+          <span>Score 1240</span>
+        </div>
+        <div className="game-track">
+          <div className="river-lane" />
+          <div className="river-bank river-bank-left" />
+          <div className="river-bank river-bank-right" />
+          <div className="game-player" />
+          <div className="game-pickup pickup-one" />
+          <div className="game-pickup pickup-two" />
+          <div className="game-hazard hazard-one" />
+          <div className="game-hazard hazard-two" />
+        </div>
+        <div className="game-message">PROTECT THE WATERSHED</div>
       </div>
     );
   }
