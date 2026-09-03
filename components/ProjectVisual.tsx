@@ -5,27 +5,15 @@ type ProjectVisualProps = {
 export function ProjectVisual({ type }: ProjectVisualProps) {
   if (type === "system") {
     return (
-      <div className="project-visual system-visual" aria-hidden="true">
-        <div className="system-sidebar">
-          <span className="mini-logo">E</span>
-          {Array.from({ length: 6 }).map((_, index) => (
-            <span className={index === 2 ? "active" : ""} key={index} />
-          ))}
-        </div>
-        <div className="system-content">
-          <div className="system-topbar">
-            <span />
-            <span />
-          </div>
-          <div className="system-metrics">
-            <div><strong>Records</strong><b>Organized</b></div>
-            <div><strong>Loans</strong><b>Active</b></div>
-            <div><strong>Reports</strong><b>Ready</b></div>
-          </div>
-          <div className="system-table">
-            {Array.from({ length: 5 }).map((_, index) => (
-              <div key={index}><span /><span /><span /><i /></div>
-            ))}
+      <div className="project-visual system-visual">
+        <div className="homepage-preview-shell" aria-hidden="true">
+          <div className="homepage-preview-viewport enremco-preview">
+            <iframe
+              src="https://enremco.com/"
+              title="ENREMCO homepage preview"
+              loading="lazy"
+              tabIndex={-1}
+            />
           </div>
         </div>
       </div>
@@ -61,14 +49,8 @@ export function ProjectVisual({ type }: ProjectVisualProps) {
   if (type === "web") {
     return (
       <div className="project-visual web-visual">
-        <div className="web-preview-shell" aria-hidden="true">
-          <div className="web-preview-bar">
-            <span />
-            <span />
-            <span />
-            <b>tukodph.com</b>
-          </div>
-          <div className="web-preview-viewport">
+        <div className="homepage-preview-shell" aria-hidden="true">
+          <div className="homepage-preview-viewport tukod-preview">
             <iframe
               src="https://tukodph.com/"
               title="TukodPH homepage preview"
@@ -83,26 +65,17 @@ export function ProjectVisual({ type }: ProjectVisualProps) {
 
   if (type === "game") {
     return (
-      <div className="project-visual game-visual" aria-hidden="true">
-        <div className="game-sky">
-          <span />
-          <span />
+      <div className="project-visual game-visual">
+        <div className="homepage-preview-shell" aria-hidden="true">
+          <div className="homepage-preview-viewport watershed-preview">
+            <iframe
+              src="https://watershedrush.netlify.app/"
+              title="Watershed Rush game preview"
+              loading="lazy"
+              tabIndex={-1}
+            />
+          </div>
         </div>
-        <div className="game-hud">
-          <b>WATERSHED RUSH</b>
-          <span>Score 1240</span>
-        </div>
-        <div className="game-track">
-          <div className="river-lane" />
-          <div className="river-bank river-bank-left" />
-          <div className="river-bank river-bank-right" />
-          <div className="game-player" />
-          <div className="game-pickup pickup-one" />
-          <div className="game-pickup pickup-two" />
-          <div className="game-hazard hazard-one" />
-          <div className="game-hazard hazard-two" />
-        </div>
-        <div className="game-message">PROTECT THE WATERSHED</div>
       </div>
     );
   }
