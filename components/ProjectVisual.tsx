@@ -60,15 +60,22 @@ export function ProjectVisual({ type }: ProjectVisualProps) {
 
   if (type === "web") {
     return (
-      <div className="project-visual web-visual" aria-hidden="true">
-        <div className="web-word">TUKOD</div>
-        <div className="web-window web-window-one">
-          <div className="web-nav"><b>TUKODPH</b><span /><span /><span /></div>
-          <div className="web-hero"><strong>Build better.</strong><i /></div>
-        </div>
-        <div className="web-window web-window-two">
-          <div className="web-card-title" />
-          <div className="web-card-grid"><span /><span /><span /><span /></div>
+      <div className="project-visual web-visual">
+        <div className="web-preview-shell" aria-hidden="true">
+          <div className="web-preview-bar">
+            <span />
+            <span />
+            <span />
+            <b>tukodph.com</b>
+          </div>
+          <div className="web-preview-viewport">
+            <iframe
+              src="https://tukodph.com/"
+              title="TukodPH homepage preview"
+              loading="lazy"
+              tabIndex={-1}
+            />
+          </div>
         </div>
       </div>
     );
