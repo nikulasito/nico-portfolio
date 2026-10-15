@@ -1,5 +1,6 @@
 import { ContactForm } from "@/components/ContactForm";
 import { Navbar } from "@/components/Navbar";
+import { MultimediaGallery } from "@/components/MultimediaGallery";
 import { ProjectVisual } from "@/components/ProjectVisual";
 import { Reveal } from "@/components/Reveal";
 
@@ -287,6 +288,8 @@ export default function Home() {
               </article>
             ))}
           </div>
+
+          <MultimediaGallery />
         </section>
 
         <section className="capabilities section-shell" id="capabilities">

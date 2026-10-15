@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 const links = [
   { label: "Work", href: "#work" },
+  { label: "Multimedia", href: "#multimedia" },
   { label: "Capabilities", href: "#capabilities" },
   { label: "About", href: "#about" },
   { label: "Contact", href: "#contact" },
