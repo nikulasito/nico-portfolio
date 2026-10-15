@@ -170,6 +170,13 @@ export default function Home() {
                 Explore selected work <span>↘</span>
               </a>
               <a
+                className="button button-secondary"
+                href="/resume/Nico-Alumbro-Resume.pdf"
+                download="Nico-Alumbro-Resume.pdf"
+              >
+                Download résumé (PDF) <span aria-hidden="true">↓</span>
+              </a>
+              <a
                 className="text-link"
                 href="mailto:n.alumbro@gmail.com?subject=Portfolio%20inquiry"
               >
@@ -403,6 +410,12 @@ export default function Home() {
               <span>Developer & Creative Technologist</span>
             </div>
             <div className="footer-links">
+              <a
+                href="/resume/Nico-Alumbro-Resume.pdf"
+                download="Nico-Alumbro-Resume.pdf"
+              >
+                Résumé (PDF) ↓
+              </a>
               <a
                 href="https://github.com/nikulasito"
                 target="_blank"

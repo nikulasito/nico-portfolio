@@ -20,6 +20,14 @@ npm run dev
 
 Open `http://localhost:3000`.
 
+## Downloadable resume
+
+The hero and footer link to `public/resume/Nico-Alumbro-Resume.pdf`. The initial
+resume uses the experience, projects, and skills already listed on this site.
+Edit `resume/resume.html`, then run `npm run resume` to regenerate the PDF using
+Chrome or Edge. Set `CHROME_PATH` if the browser is installed in another location.
+You can also replace the PDF directly, keeping the same filename.
+
 ## Deploy
 
 Push the files to the `main` branch of `nikulasito/nico-portfolio`. Vercel should automatically rebuild the existing site connected to `nico-alumbro.is-a.dev`.

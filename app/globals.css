@@ -491,9 +491,10 @@ main {
 
 .hero-actions {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: flex-end;
-  gap: 28px;
+  gap: 16px 24px;
 }
 
 .button {
@@ -522,6 +523,23 @@ main {
 .button-primary:hover {
   background: white;
   transform: translateY(-3px);
+}
+
+.button-secondary {
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.button-secondary:hover {
+  color: var(--ink);
+  background: white;
+  transform: translateY(-3px);
+}
+
+.button:focus-visible,
+.footer-links a:focus-visible {
+  outline: 2px solid var(--lime);
+  outline-offset: 5px;
 }
 
 .text-link {
