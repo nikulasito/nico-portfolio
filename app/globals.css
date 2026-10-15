@@ -833,7 +833,7 @@ main {
 
 /* Multimedia portfolio */
 .multimedia {
-  margin-top: clamp(90px, 10vw, 150px);
+  /* margin-top: clamp(90px, 10vw, 150px); */
 }
 
 .multimedia-heading {
